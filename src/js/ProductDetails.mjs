@@ -27,13 +27,13 @@ export default class ProductDetails {
   }
 }
 
-function convertToJson(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    throw new Error('Bad Response');
-  }
-}
+//function convertToJson(res) {
+  //if (res.ok) {
+    //return res.json();
+  //} else {
+    //throw new Error('Bad Response');
+  //}
+//}
 
 function productDetailsTemplate(product) {
   document.querySelector('h2').textContent = product.Brand.Name;
