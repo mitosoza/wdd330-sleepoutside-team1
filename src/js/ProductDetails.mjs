@@ -22,6 +22,7 @@ export default class ProductDetails {
 
   renderProductDetails() {
     // Set the product title
+    console.log("PRODUCT DETAILS", this.product);
     if (this.product && this.product.Name) {
       document.title = `Sleep Outside | ${this.product.Name}`;
     }
@@ -35,7 +36,7 @@ export default class ProductDetails {
       <h2 class="divider">${this.product.NameWithoutBrand || this.product.Name}</h2>
       <img
         class="divider"
-        src="${this.product.Image}"
+        src="${this.product.Images?.PrimaryLarge}"
         alt="${this.product.NameWithoutBrand || this.product.Name}"
       />
       <p class="product-card__price">$${this.product.FinalPrice?.toFixed(2) || this.product.ListPrice?.toFixed(2) || ""}</p>
