@@ -26,6 +26,29 @@ body {
   color: var(--dark-grey);
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+.nav-search input {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+.nav-search button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
 }

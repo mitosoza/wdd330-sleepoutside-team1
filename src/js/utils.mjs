@@ -38,7 +38,7 @@ export function renderListWithTemplate(template, parentElement, list, position =
 // render templates
 export function renderWithTemplate(template, parentElement, data, callback) {
   parentElement.innerHTML = template;
-  if(callback) {
+  if (callback) {
     callback(data);
   }
 }
@@ -53,6 +53,17 @@ export async function loadHeaderFooter() {
   const headerTemplate = await loadTemplate("../partials/header.html");
   const headerElement = document.querySelector("#main-header");
   renderWithTemplate(headerTemplate, headerElement);
+
+  // Once the header is injected, wire up the nav-search form
+  const searchForm = document.getElementById("nav-search");
+  if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const query = e.target.q.value.trim();
+      if (!query) return;
+      window.location.href = `/product_listing/index.html?search=${encodeURIComponent(query)}`;
+    });
+  }
 
   const footerTemplate = await loadTemplate("../partials/footer.html");
   const footerElement = document.querySelector("#main-footer");
