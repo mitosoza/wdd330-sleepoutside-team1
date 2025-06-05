@@ -205,6 +205,15 @@ button {
 
 /* End cart icon styles */
 
+.cart-footer a {
+  text-decoration: none;
+}
+
+.cart-footer #checkout,
+.wf1 #checkoutSubmit {
+  margin-bottom: 1rem;
+}
+
 .mission {
   position: absolute;
   top: 1rem;
@@ -312,6 +321,62 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
+
+/* Checkout Form */
+.wf1 fieldset {
+  width: 500px;
+  margin: 1rem auto;
+  background-color: rgb(250, 249, 247);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+.wf1 label {
+  display: block;
+  padding-top: 1.25rem;
+  font-size: .9rem;
+  max-width: 450px;
+}
+
+.wf1 input[type="text"] {
+  background-color: #eee;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: .75rem;
+  margin-top: 0.2rem;
+  color: #555;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wf1 input:required {
+  border-bottom: 8px solid red;
+}
+
+.wf1 input:required:valid {
+  border-bottom: 8px solid green;
+}
+
+.order-summary .summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.order-summary .summary-label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.order-summary .summary-value {
+  text-align: right;
+  min-width: 80px;
+  display: inline-block;
+}
+
 
 @media screen and (min-width: 500px) {
   body {
