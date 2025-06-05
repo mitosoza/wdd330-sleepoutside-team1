@@ -29,7 +29,9 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
 }
 .nav-search {
   display: flex;
@@ -143,7 +145,8 @@ button {
 .cart {
   padding-top: 1em;
   position: relative;
-  text-align: center;
+  text-align: right;
+  margin-left: auto;
 }
 
 .cart svg {
@@ -152,6 +155,52 @@ button {
 
 .cart:hover svg {
   fill: gray;
+}
+
+.cart.animate {
+  animation: cart-shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes cart-shake {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  10% {
+    transform: rotate(-28deg) scale(1.1);
+  }
+
+  20% {
+    transform: rotate(22deg) scale(1.1);
+  }
+
+  30% {
+    transform: rotate(-18deg) scale(1.08);
+  }
+
+  40% {
+    transform: rotate(14deg) scale(1.08);
+  }
+
+  50% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+
+  60% {
+    transform: rotate(7deg) scale(1.05);
+  }
+
+  70% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+
+  80% {
+    transform: rotate(2deg) scale(1.01);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 /* End cart icon styles */

@@ -18,11 +18,17 @@ export default class ProductDetails {
     const cartItems = getLocalStorage("so-cart") || [];
     cartItems.push(this.product);
     setLocalStorage("so-cart", cartItems);
-  }
+
+    // Animate the cart icon
+    const cartIcon = document.querySelector('.cart');
+    cartIcon.classList.add('animate');
+    setTimeout(() => {
+        cartIcon.classList.remove('animate');
+      }, 2000);
+    }
 
   renderProductDetails() {
     // Set the product title
-    console.log("PRODUCT DETAILS", this.product);
     if (this.product && this.product.Name) {
       document.title = `Sleep Outside | ${this.product.Name}`;
     }
