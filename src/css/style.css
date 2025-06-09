@@ -210,7 +210,7 @@ button {
 }
 
 .cart-footer #checkout,
-.wf1 #checkoutSubmit {
+.checkout__form #checkoutSubmit {
   margin-bottom: 1rem;
 }
 
@@ -233,7 +233,7 @@ button {
 }
 
 .products {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding: 1rem;
 }
 
@@ -323,7 +323,7 @@ button {
 }
 
 /* Checkout Form */
-.wf1 fieldset {
+.checkout__form fieldset {
   width: 500px;
   margin: 1rem auto;
   background-color: rgb(250, 249, 247);
@@ -332,14 +332,14 @@ button {
   padding: 0.5rem 1rem;
 }
 
-.wf1 label {
+.checkout__form label {
   display: block;
   padding-top: 1.25rem;
   font-size: .9rem;
   max-width: 450px;
 }
 
-.wf1 input[type="text"] {
+.checkout__form input[type="text"] {
   background-color: #eee;
   display: block;
   border: 1px solid #ddd;
@@ -351,12 +351,44 @@ button {
   box-sizing: border-box;
 }
 
-.wf1 input:required {
+.checkout__form input:required {
   border-bottom: 8px solid red;
 }
 
-.wf1 input:required:valid {
+.checkout__form input:required:valid {
   border-bottom: 8px solid green;
+}
+
+.divider .alert:first-of-type {
+  margin-top: 1rem;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+  border: 1px solid #f0a968;
+  background-color: #fff4e0;
+  padding: 0 1em;
+}
+
+.alert p {
+  margin: 0;
+  flex: 1;
+}
+
+.alert span {
+  margin-left: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.alert span:hover {
+  color: orange;
+  cursor: pointer;
 }
 
 .order-summary .summary-row {
@@ -390,6 +422,7 @@ button {
 
   .cart-card {
     font-size: inherit;
+    width: 700px;
     grid-template-columns: 150px auto 15%;
   }
 }

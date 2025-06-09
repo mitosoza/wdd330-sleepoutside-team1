@@ -12,8 +12,13 @@ document
 // listening for click on the button
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
   e.preventDefault();
+  const myForm = document.forms["checkout"];
+  const chk_status = myForm.checkValidity();
+  myForm.reportValidity();
+  console.log("Form Status: ", chk_status);
 
-  checkout.checkout();
+  if(chk_status)
+    checkout.checkout();
 });
 
 loadHeaderFooter();

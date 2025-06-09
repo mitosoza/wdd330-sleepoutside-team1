@@ -16,6 +16,7 @@ export default defineConfig({
         newletter: resolve(__dirname, "src/newsletter/index.html"),
         privacyPolicy: resolve(__dirname, "src/newsletter/privacy-policy.html"),
         nesletterThankYou: resolve(__dirname, "src/newsletter/thankyou.html"),
+        orderSuccess: resolve(__dirname, "src/checkout/success.html"),
       },
     },
   },
