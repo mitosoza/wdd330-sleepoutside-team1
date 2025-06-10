@@ -17,6 +17,26 @@ function CartCardTemplate(item) {
   </li>`;
 }
 
+function renderEmptyCartMessage() {
+  const emptyCartMessage = `
+    <div class="cart-card__empty">
+      <img src="../images/shopping-cart.jpeg" alt="shopping cart">
+      <h2>Your cart is empty</h2>
+      <p>
+        Looks like you haven't added<br>
+        anything to your cart yet.
+      </p>
+      <div class="cart-card__button">
+        <a href="../index.html" class="goHome">
+          <button>Go Home</button>
+        </a>
+      </div>
+    </div>
+  `;
+  const listElement = document.querySelector(".cart-list");
+  listElement.innerHTML = emptyCartMessage;
+}
+
 export default class ShoppingCart {
   constructor(dataSource, listElement) {
     // You passed in this information to make the class as reusable as possible.
@@ -26,7 +46,11 @@ export default class ShoppingCart {
   }
 
   async init() {
-    this.renderList(this.dataSource);
+    if (this.dataSource.length === 0) {
+      renderEmptyCartMessage();
+    } else {
+      this.renderList(this.dataSource);
+    }
   }
 
   renderList(list) {

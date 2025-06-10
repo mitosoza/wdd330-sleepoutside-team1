@@ -205,7 +205,22 @@ button {
 
 /* End cart icon styles */
 
-.cart-footer a {
+.cart-card__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  text-align: center;
+  padding: 0 1em 2em 1em;
+}
+
+.cart-card__empty p {
+  padding: 1.5em 0;
+}
+
+.cart-footer a,
+.cart-card__button a {
   text-decoration: none;
 }
 
