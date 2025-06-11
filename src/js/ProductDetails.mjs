@@ -10,22 +10,32 @@ export default class ProductDetails {
   async init() {
     this.product = await this.dataSource.findProductById(this.productId);
     this.renderProductDetails();
-    document.getElementById('addToCart')
-      .addEventListener('click', this.addProductToCart.bind(this));
+    document
+      .getElementById("addToCart")
+      .addEventListener("click", this.addProductToCart.bind(this));
   }
 
   addProductToCart() {
-    const cartItems = getLocalStorage("so-cart") || [];
-    cartItems.push(this.product);
+    let cartItems = getLocalStorage("so-cart") || [];
+    const existingItemIndex = cartItems.findIndex(item => item.Id === this.product.Id);
+    
+    // Check if the product already in the cart
+    if (existingItemIndex > -1) {
+        cartItems[existingItemIndex].Quantity += 1;
+    } else {
+        this.product["Quantity"] = 1;
+        cartItems.push(this.product);
+    }
+
     setLocalStorage("so-cart", cartItems);
 
     // Animate the cart icon
-    const cartIcon = document.querySelector('.cart');
-    cartIcon.classList.add('animate');
+    const cartIcon = document.querySelector(".cart");
+    cartIcon.classList.add("animate");
     setTimeout(() => {
-        cartIcon.classList.remove('animate');
-      }, 2000);
-    }
+      cartIcon.classList.remove("animate");
+    }, 2000);
+  }
 
   renderProductDetails() {
     // Set the product title
@@ -33,7 +43,7 @@ export default class ProductDetails {
       document.title = `Sleep Outside | ${this.product.Name}`;
     }
 
-    const section = document.querySelector('.product-detail');
+    const section = document.querySelector(".product-detail");
     if (!section || !this.product) return;
 
     // Build product-detail section
