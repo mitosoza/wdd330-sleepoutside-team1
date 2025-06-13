@@ -842,3 +842,14 @@ a.button:hover {
     grid-column: 4;
   }
 }
+.wishlist {
+  margin-left: 1rem;
+  line-height: 60px;           /* match your logo/cart */
+}
+.wishlist a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+.wishlist a:hover {
+  color: var(--primary-color);
+}
